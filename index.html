@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chaitrali Shankar Jalgi | Backend Engineer & Distributed Systems</title>
+  <meta name="description" content="Portfolio of Chaitrali Shankar Jalgi - Backend Engineer, 3rd Year EXTC student specializing in Java Spring Boot, Go, Apache Kafka, Cloud, and Kubernetes across the Cyber Desert Oasis." />
+  <meta name="keywords" content="Chaitrali Shankar Jalgi, Backend Engineer, Java, Spring Boot, Go, Apache Kafka, Kubernetes, DevOps, Portfolio" />
+  <meta name="author" content="Chaitrali Shankar Jalgi" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Chaitrali Shankar Jalgi | The Cyber Desert Oasis" />
+  <meta property="og:description" content="High-Throughput Pipelines & Distributed Architectures in the Desert of Code." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN fallback -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Import Map for resilient ESM loading in both Vite and direct browser environments -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+      "canvas-confetti": "https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/+esm"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body class="cyber-desert-theme">
+
+  <!-- Ambient Desert Dust Canvas (Parallax Particles) -->
+  <canvas id="ambient-particles" class="ambient-canvas"></canvas>
+
+  <!-- Custom Cursor Glow -->
+  <div id="cursor-glow" class="cursor-glow" aria-hidden="true"></div>
+  <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Audio Synthesizer Status Pill -->
+  <div class="audio-control-fixed">
+    <button id="audio-toggle-btn" class="audio-btn" aria-label="Toggle ambient desert synth sound">
+      <span class="audio-icon">♫</span>
+      <span id="audio-label">AMBIENT SOUND: OFF</span>
+      <span class="audio-wave"></span>
+    </button>
+  </div>
+
+  <!-- Navigation Bar (Floating Glass Oasis Island) -->
+  <header class="navbar-wrapper">
+    <nav class="navbar-glass" id="main-nav" aria-label="Primary Navigation">
+      <a href="#hero" class="nav-brand" id="brand-logo">
+        <span class="brand-monogram">CSJ</span>
+        <span class="brand-divider">//</span>
+        <span class="brand-meta">OASIS.SYS</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#story" class="nav-link"><span class="nav-num">01.</span> Protocol</a></li>
+        <li><a href="#pipeline" class="nav-link"><span class="nav-num">02.</span> Kafka Forge</a></li>
+        <li><a href="#matrix" class="nav-link"><span class="nav-num">03.</span> Tech Matrix</a></li>
+        <li><a href="#sandbox" class="nav-link"><span class="nav-num">04.</span> Sandbox & Art</a></li>
+        <li><a href="#transmission" class="nav-link"><span class="nav-num">05.</span> Terminal</a></li>
+      </ul>
+
+      <div class="nav-telemetry">
+        <div class="telemetry-pill">
+          <span class="status-dot"></span>
+          <span id="nav-clock">IST --:--:--</span>
+        </div>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-action-btn" id="nav-github-link" title="GitHub Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main id="main-content">
+
+    <!-- 1. HERO SECTION (The 3D Dune Mirage) -->
+    <section id="hero" class="hero-section">
+      <!-- Three.js Canvas Container -->
+      <div id="three-canvas-container" class="three-container" aria-label="3D Interactive Dune Landscape"></div>
+
+      <!-- Hero Glass Card Overlay -->
+      <div class="hero-content-wrapper">
+        <div class="hero-badge">
+          <span class="badge-icon">⚡</span>
+          <span>B.E. EXTC 3RD YEAR // DISTRIBUTED SYSTEMS // CLUSTER-01</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="name-prefix">Hello, traveler. I am</span>
+          <span class="name-highlight">Chaitrali Shankar Jalgi</span>
+        </h1>
+
+        <p class="hero-role">
+          Backend Engineer <span class="role-sep">•</span> Distributed Systems <span class="role-sep">•</span> Cloud Architecture
+        </p>
+
+        <div class="hero-terminal-line">
+          <span class="terminal-prefix">&gt; oasis.runtime:</span>
+          <span id="hero-typing-text" class="typing-text"></span>
+          <span class="terminal-cursor">_</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#pipeline" class="btn btn-primary" id="hero-inspect-pipeline-btn">
+            <span class="btn-glow"></span>
+            <span class="btn-content">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+              Inspect Live Pipeline
+            </span>
+          </a>
+          <a href="#transmission" class="btn btn-secondary" id="hero-terminal-ping-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+            Connect via Terminal
+          </a>
+          <button class="btn btn-glass" id="hero-easter-egg-btn" title="Toggle 3D wireframe mesh mode">
+            <span>🌐 Wireframe Mode</span>
+          </button>
+        </div>
+
+        <!-- 3D Scene Controls Tip -->
+        <div class="scene-hint">
+          <span class="hint-pulse"></span>
+          <span>Drag with mouse / touch to orbit 3D Dunes • Move pointer for sand parallax</span>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#story" class="scroll-down-indicator" aria-label="Scroll to about section">
+        <div class="mouse-icon">
+          <div class="wheel"></div>
+        </div>
+        <span class="scroll-text">DISCOVER OASIS</span>
+      </a>
+    </section>
+
+    <!-- 2. ABOUT & PROTOCOL (Hardware & Distributed Systems) -->
+    <section id="story" class="section story-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">// 01. PROTOCOL</span>
+          <h2 class="section-title">The Engineering Oasis</h2>
+          <p class="section-desc">Merging hardware telecommunication intuition with distributed cloud backends.</p>
+        </div>
+
+        <div class="story-grid">
+          <!-- Story Main Narrative Card -->
+          <div class="story-card-main glass-panel">
+            <div class="panel-header">
+              <span class="window-dot red"></span>
+              <span class="window-dot yellow"></span>
+              <span class="window-dot green"></span>
+              <span class="panel-title">profile_telemetry.md</span>
+            </div>
+            <div class="panel-body">
+              <p class="lead-text">
+                Currently in my <strong>3rd Year of Electronics and Telecommunication Engineering (EXTC)</strong>, I view software through the lens of physical signals, telemetry, and low-latency packet flow.
+              </p>
+              <p>
+                When distributed systems scale, networks behave like electromagnetic wave conduits—governed by throughput, backpressure, jitter, and partition tolerance. I design and build resilient backends using <strong>Java (Spring Boot)</strong> and <strong>GoLang</strong>, orchestrated with <strong>Apache Kafka</strong> event pipelines and resilient <strong>Kubernetes</strong> clusters.
+              </p>
+              <div class="stats-row">
+                <div class="stat-box">
+                  <span class="stat-number">3rd</span>
+                  <span class="stat-label">Year EXTC Student</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number">0.8ms</span>
+                  <span class="stat-label">Target Goroutine Latency</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Passion for Event Streams</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Cyber Desert Fauna Showcase (Theme Requirement) -->
+          <div class="fauna-cards-wrapper">
+            <div class="fauna-header">
+              <span class="fauna-tag">CYBER FAUNA MOTIFS</span>
+              <p class="fauna-sub">The desert entities powering the distributed oasis:</p>
+            </div>
+
+            <div class="fauna-grid">
+              <!-- Creature 1: Cyber Fennec Fox -->
+              <div class="fauna-card glass-panel" data-tilt>
+                <div class="fauna-icon-box">
+                  <svg class="fauna-svg" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="45" stroke="#FF8C42" stroke-width="2" stroke-dasharray="4 2"/>
+                    <!-- Stylized Fennec Ears & Headphones -->
+                    <path d="M25 40 L35 15 L45 42 Z" fill="#E3A857" opacity="0.8"/>
+                    <path d="M75 40 L65 15 L55 42 Z" fill="#E3A857" opacity="0.8"/>
+                    <!-- Head & Snout -->
+                    <polygon points="30,42 70,42 50,75" fill="#FF8C42"/>
+                    <circle cx="43" cy="50" r="3" fill="#0F0A1A"/>
+                    <circle cx="57" cy="50" r="3" fill="#0F0A1A"/>
+                    <polygon points="48,65 52,65 50,69" fill="#0F0A1A"/>
+                    <!-- Glowing Cyber DJ Headphones -->
+                    <path d="M25 50 A26 26 0 0 1 75 50" stroke="#38EF7D" stroke-width="4" stroke-linecap="round"/>
+                    <rect x="20" y="44" width="8" height="15" rx="4" fill="#38EF7D"/>
+                    <rect x="72" y="44" width="8" height="15" rx="4" fill="#38EF7D"/>
+                  </svg>
+                </div>
+                <div class="fauna-info">
+                  <h4>The Cyber Fennec Fox</h4>
+                  <span class="fauna-role">Low-Latency Listener & Go Scout</span>
+                  <p>Wears glowing neon headphones while coding high-concurrency Go microservices in the desert twilight.</p>
+                </div>
+              </div>
+
+              <!-- Creature 2: Cyber Falcon -->
+              <div class="fauna-card glass-panel" data-tilt>
+                <div class="fauna-icon-box">
+                  <svg class="fauna-svg" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="45" stroke="#4EECD5" stroke-width="2" stroke-dasharray="6 3"/>
+                    <!-- Falcon Wings & Head -->
+                    <path d="M20 60 Q50 30 50 20 Q50 30 80 60 Q50 45 20 60 Z" fill="#E28743"/>
+                    <polygon points="50,20 44,38 56,38" fill="#FF8C42"/>
+                    <polygon points="50,38 46,45 54,45" fill="#0F0A1A"/>
+                    <!-- HUD Telemetry Goggles -->
+                    <rect x="40" y="28" width="20" height="7" rx="3" fill="#4EECD5" opacity="0.9"/>
+                    <circle cx="45" cy="31" r="1.5" fill="#0F0A1A"/>
+                    <circle cx="55" cy="31" r="1.5" fill="#0F0A1A"/>
+                    <line x1="15" y1="50" x2="85" y2="50" stroke="#4EECD5" stroke-width="1" stroke-dasharray="2 2"/>
+                  </svg>
+                </div>
+                <div class="fauna-info">
+                  <h4>The Cyber Falcon</h4>
+                  <span class="fauna-role">Cluster Recon & DevOps HUD</span>
+                  <p>Scouts across Kubernetes cloud clusters with telemetry goggles, tracking health metrics and pod health.</p>
+                </div>
+              </div>
+
+              <!-- Creature 3: Nomadic Camel -->
+              <div class="fauna-card glass-panel" data-tilt>
+                <div class="fauna-icon-box">
+                  <svg class="fauna-svg" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="45" stroke="#D96B43" stroke-width="2" stroke-dasharray="4 4"/>
+                    <!-- Camel Silhouette -->
+                    <path d="M25 65 Q35 60 40 45 Q45 35 48 45 Q55 60 75 65" stroke="#E3A857" stroke-width="6" stroke-linecap="round" fill="none"/>
+                    <!-- Server Rack on Hump -->
+                    <rect x="42" y="24" width="20" height="24" rx="2" fill="#1A132F" stroke="#38EF7D" stroke-width="2"/>
+                    <line x1="45" y1="30" x2="59" y2="30" stroke="#38EF7D" stroke-width="1.5"/>
+                    <line x1="45" y1="36" x2="59" y2="36" stroke="#FF8C42" stroke-width="1.5"/>
+                    <line x1="45" y1="42" x2="59" y2="42" stroke="#4EECD5" stroke-width="1.5"/>
+                    <circle cx="63" cy="22" r="2" fill="#38EF7D"/>
+                  </svg>
+                </div>
+                <div class="fauna-info">
+                  <h4>The Nomadic Camel</h4>
+                  <span class="fauna-role">Kafka Stream & Storage Caravan</span>
+                  <p>Carries glowing server racks and fault-tolerant partitions across rolling golden sand dunes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. THE BACKEND FORGE (Interactive Kafka Stream Pipeline) -->
+    <section id="pipeline" class="section pipeline-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">// 02. KAFKA FORGE</span>
+          <h2 class="section-title">Interactive Distributed Stream</h2>
+          <p class="section-desc">Experience real-time event ingestion through high-throughput distributed message queues.</p>
+        </div>
+
+        <!-- Interactive Pipeline Console -->
+        <div class="pipeline-console glass-panel">
+          <div class="console-topbar">
+            <div class="cluster-status">
+              <span class="pulse-indicator"></span>
+              <span class="cluster-label">CLUSTER STATUS: OPERATIONAL</span>
+              <span class="partition-pill">TOPIC: oasis.orders.v1 [3 PARTITIONS]</span>
+            </div>
+            <div class="console-actions">
+              <button id="trigger-packet-btn" class="btn btn-sm btn-accent">
+                <span class="btn-icon">⚡</span>
+                <span>Send Event Packet</span>
+              </button>
+              <button id="auto-stream-toggle" class="btn btn-sm btn-glass">
+                <span>Auto Stream: OFF</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Visual Node Flow Diagram -->
+          <div class="pipeline-diagram" id="pipeline-track">
+            <!-- Node 1: Go Producer -->
+            <div class="pipe-node" id="node-producer">
+              <div class="node-icon go-icon">Go</div>
+              <div class="node-meta">
+                <span class="node-role">PRODUCER</span>
+                <span class="node-name">Go Microservice</span>
+                <span class="node-detail">12,000 req/s • Channels</span>
+              </div>
+              <div class="node-ping" id="ping-producer"></div>
+            </div>
+
+            <!-- Conduit 1 -->
+            <div class="pipe-conduit">
+              <div class="conduit-line">
+                <div class="packet-particle" id="packet-1"></div>
+              </div>
+              <span class="conduit-label">TCP / TLS</span>
+            </div>
+
+            <!-- Node 2: Apache Kafka Broker -->
+            <div class="pipe-node kafka-node" id="node-kafka">
+              <div class="node-icon kafka-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 3v6m0 6v6M3 12h6m6 0h6"></path></svg>
+              </div>
+              <div class="node-meta">
+                <span class="node-role">EVENT BROKER</span>
+                <span class="node-name">Apache Kafka</span>
+                <span class="node-detail">Partitions P0..P2 • Log Segment</span>
+              </div>
+              <div class="node-ping" id="ping-kafka"></div>
+            </div>
+
+            <!-- Conduit 2 -->
+            <div class="pipe-conduit">
+              <div class="conduit-line">
+                <div class="packet-particle" id="packet-2"></div>
+              </div>
+              <span class="conduit-label">High-Throughput</span>
+            </div>
+
+            <!-- Node 3: Spring Boot Consumer -->
+            <div class="pipe-node" id="node-consumer">
+              <div class="node-icon spring-icon">Java</div>
+              <div class="node-meta">
+                <span class="node-role">CONSUMER GROUP</span>
+                <span class="node-name">Spring Boot Worker</span>
+                <span class="node-detail">Batch 500 • Async Processing</span>
+              </div>
+              <div class="node-ping" id="ping-consumer"></div>
+            </div>
+
+            <!-- Conduit 3 -->
+            <div class="pipe-conduit">
+              <div class="conduit-line">
+                <div class="packet-particle" id="packet-3"></div>
+              </div>
+              <span class="conduit-label">gRPC / API</span>
+            </div>
+
+            <!-- Node 4: Kubernetes Cloud -->
+            <div class="pipe-node k8s-node" id="node-cloud">
+              <div class="node-icon k8s-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+              </div>
+              <div class="node-meta">
+                <span class="node-role">ORCHESTRATION</span>
+                <span class="node-name">K8s Edge Cluster</span>
+                <span class="node-detail">3 Replicas • Multi-AZ</span>
+              </div>
+              <div class="node-ping" id="ping-cloud"></div>
+            </div>
+          </div>
+
+          <!-- Live Metrics & Event Log -->
+          <div class="pipeline-footer">
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <span class="m-label">THROUGHPUT</span>
+                <span class="m-val" id="metric-throughput">124.5k msg/s</span>
+              </div>
+              <div class="metric-item">
+                <span class="m-label">P99 LATENCY</span>
+                <span class="m-val highlight" id="metric-latency">1.2 ms</span>
+              </div>
+              <div class="metric-item">
+                <span class="m-label">TOTAL PACKETS</span>
+                <span class="m-val" id="metric-packets">1,842,091</span>
+              </div>
+              <div class="metric-item">
+                <span class="m-label">ACK REPLICATION</span>
+                <span class="m-val" id="metric-acks">all (in-sync)</span>
+              </div>
+            </div>
+
+            <!-- Live Kafka Packet Console Log -->
+            <div class="event-log-terminal">
+              <div class="terminal-bar">
+                <span>kafka-tail --topic oasis.orders.v1 --follow</span>
+                <button id="clear-logs-btn" class="term-btn">CLEAR</button>
+              </div>
+              <div class="terminal-log-feed" id="kafka-log-feed">
+                <div class="log-row info"><span class="log-time">[10:34:02.114]</span> <span class="log-tag">[INIT]</span> Kafka broker cluster active on nodes desert-1, desert-2, desert-3</div>
+                <div class="log-row success"><span class="log-time">[10:34:02.420]</span> <span class="log-tag">[GO-PRODUCER]</span> Channel initialized. Ready for high-concurrency event ingestion.</div>
+                <div class="log-row alert"><span class="log-time">[10:34:03.001]</span> <span class="log-tag">[SPRING-BOOT]</span> Consumer group 'oasis-workers' rebalance complete. 3 partitions assigned.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. TECH MATRIX (Interactive 3D Tilt Cards) -->
+    <section id="matrix" class="section matrix-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">// 03. CORE WEAPONS</span>
+          <h2 class="section-title">Backend Architecture Matrix</h2>
+          <p class="section-desc">Battle-tested tools and frameworks for building mission-critical services.</p>
+        </div>
+
+        <div class="matrix-grid">
+          <!-- Card 1: Java & Spring Boot -->
+          <div class="matrix-card glass-panel" data-tilt>
+            <div class="card-glow-top spring"></div>
+            <div class="matrix-card-head">
+              <div class="matrix-icon java">☕</div>
+              <div class="matrix-level">ADVANCED</div>
+            </div>
+            <h3 class="matrix-title">Java & Spring Boot</h3>
+            <p class="matrix-desc">
+              Building enterprise microservices, transactional RESTful services, Spring Security authentication, and robust data persistence with JPA/Hibernate.
+            </p>
+            <div class="pill-group">
+              <span class="tech-pill">Spring Boot</span>
+              <span class="tech-pill">Spring Cloud</span>
+              <span class="tech-pill">Hibernate</span>
+              <span class="tech-pill">Maven</span>
+              <span class="tech-pill">JUnit</span>
+            </div>
+          </div>
+
+          <!-- Card 2: GoLang -->
+          <div class="matrix-card glass-panel" data-tilt>
+            <div class="card-glow-top golang"></div>
+            <div class="matrix-card-head">
+              <div class="matrix-icon go">🐹</div>
+              <div class="matrix-level">HIGH CONCURRENCY</div>
+            </div>
+            <h3 class="matrix-title">GoLang (Go)</h3>
+            <p class="matrix-desc">
+              Lightweight daemons, goroutine channels, high-speed CLI tools, gRPC microservices, and network socket programming with minimal memory footprint.
+            </p>
+            <div class="pill-group">
+              <span class="tech-pill">Goroutines</span>
+              <span class="tech-pill">Channels</span>
+              <span class="tech-pill">gRPC</span>
+              <span class="tech-pill">Gin / Fiber</span>
+              <span class="tech-pill">Pprof</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Apache Kafka -->
+          <div class="matrix-card glass-panel" data-tilt>
+            <div class="card-glow-top kafka"></div>
+            <div class="matrix-card-head">
+              <div class="matrix-icon kafka">⚡</div>
+              <div class="matrix-level">STREAMING CORE</div>
+            </div>
+            <h3 class="matrix-title">Apache Kafka</h3>
+            <p class="matrix-desc">
+              Event-driven architecture, partition strategies, high-throughput consumer groups, offset management, message schemas, and replayable distributed logs.
+            </p>
+            <div class="pill-group">
+              <span class="tech-pill">Topic Partitions</span>
+              <span class="tech-pill">Consumer Groups</span>
+              <span class="tech-pill">Kafka Streams</span>
+              <span class="tech-pill">Schema Registry</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Cloud & Kubernetes -->
+          <div class="matrix-card glass-panel" data-tilt>
+            <div class="card-glow-top cloud"></div>
+            <div class="matrix-card-head">
+              <div class="matrix-icon k8s">☸</div>
+              <div class="matrix-level">INFRASTRUCTURE</div>
+            </div>
+            <h3 class="matrix-title">Cloud, DevOps & K8s</h3>
+            <p class="matrix-desc">
+              Docker multi-stage builds, Kubernetes deployments & StatefulSets, CI/CD with GitHub Actions, Helm charts, and resilient distributed telemetry.
+            </p>
+            <div class="pill-group">
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">Kubernetes</span>
+              <span class="tech-pill">GitHub Actions</span>
+              <span class="tech-pill">Linux Bash</span>
+              <span class="tech-pill">Helm</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Python & AI/ML -->
+          <div class="matrix-card glass-panel" data-tilt>
+            <div class="card-glow-top python"></div>
+            <div class="matrix-card-head">
+              <div class="matrix-icon py">🐍</div>
+              <div class="matrix-level">DATA & ML</div>
+            </div>
+            <h3 class="matrix-title">Python, AI/ML & DevOps</h3>
+            <p class="matrix-desc">
+              Algorithmic data pipelines, telemetry parsing, machine learning prototyping with PyTorch/Scikit-learn, FastAPI servers, and automation bots.
+            </p>
+            <div class="pill-group">
+              <span class="tech-pill">FastAPI</span>
+              <span class="tech-pill">PyTorch</span>
+              <span class="tech-pill">NumPy</span>
+              <span class="tech-pill">Pandas</span>
+              <span class="tech-pill">Automations</span>
+            </div>
+          </div>
+
+          <!-- Card 6: EXTC & Telecommunications -->
+          <div class="matrix-card glass-panel" data-tilt>
+            <div class="card-glow-top extc"></div>
+            <div class="matrix-card-head">
+              <div class="matrix-icon extc">📡</div>
+              <div class="matrix-level">TELECOM / HARDWARE</div>
+            </div>
+            <h3 class="matrix-title">Electronics & Telecom (EXTC)</h3>
+            <p class="matrix-desc">
+              Deep understanding of digital communication protocols, Fourier transforms, microcontrollers (ESP32/Arduino), signal modulation, and hardware telemetry.
+            </p>
+            <div class="pill-group">
+              <span class="tech-pill">Signal Telemetry</span>
+              <span class="tech-pill">UART/SPI/I2C</span>
+              <span class="tech-pill">Digital Comms</span>
+              <span class="tech-pill">DSP</span>
+              <span class="tech-pill">Microcontrollers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CREATIVE SANDBOX (Useless Softwares, Art Studio, Mini Arcade) -->
+    <section id="sandbox" class="section sandbox-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">// 04. THE CREATIVE SANDBOX</span>
+          <h2 class="section-title">Where Code Meets Art & Gaming</h2>
+          <p class="section-desc">Building deliberately "useless" softwares, painting vibrant canvases, and retro games.</p>
+        </div>
+
+        <!-- Sandbox Tabs -->
+        <div class="sandbox-tabs">
+          <button class="sandbox-tab-btn active" data-tab="tab-useless">
+            <span class="tab-icon">🧪</span>
+            <span>Gloriously "Useless" Softwares</span>
+          </button>
+          <button class="sandbox-tab-btn" data-tab="tab-art">
+            <span class="tab-icon">🎨</span>
+            <span>Art Studio & Paintings</span>
+          </button>
+          <button class="sandbox-tab-btn" data-tab="tab-arcade">
+            <span class="tab-icon">🎮</span>
+            <span>Dune Runner Arcade Game</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Gloriously Useless Softwares -->
+        <div class="tab-content active" id="tab-useless">
+          <div class="useless-grid">
+            <!-- Project 1 -->
+            <div class="useless-card glass-panel">
+              <div class="useless-badge">HIGH-AVAILABILITY SILLINESS</div>
+              <h3 class="useless-title">The Over-Engineered Toaster Daemon</h3>
+              <p class="useless-desc">
+                A distributed Raft consensus cluster in Go that requires 3 independent quorum votes before toasting a single slice of sourdough. Includes Prometheus metrics for crumb distribution.
+              </p>
+              <div class="useless-tech">Go • Raft Protocol • K8s • Prometheus</div>
+              <button class="btn btn-sm btn-ghost trigger-demo" data-demo="toaster">
+                <span>Run Mock Raft Toast Vote</span>
+              </button>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="useless-card glass-panel">
+              <div class="useless-badge">AUDIO SIGNAL PROCESSING</div>
+              <h3 class="useless-title">Cat Meow FFT Analyzer</h3>
+              <p class="useless-desc">
+                Applies Fast Fourier Transforms (FFT) on audio to classify feline meows directly into standard HTTP response codes (e.g., 400 Bad Request, 404 Food Not Found, 418 I'm a Teapot).
+              </p>
+              <div class="useless-tech">Python • SciPy FFT • EXTC Telemetry • Web Audio</div>
+              <button class="btn btn-sm btn-ghost trigger-demo" data-demo="catmeow">
+                <span>Analyze Sample Meow</span>
+              </button>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="useless-card glass-panel">
+              <div class="useless-badge">DESERT MAGIC CANVAS</div>
+              <h3 class="useless-title">Anti-Productivity Screen Vaporizer</h3>
+              <p class="useless-desc">
+                A browser extension experiment that disintegrates distracting tabs into golden desert sand particles when you've scrolled through social media for more than 4 minutes.
+              </p>
+              <div class="useless-tech">JavaScript • Canvas 2D • Physics Particles</div>
+              <button class="btn btn-sm btn-ghost trigger-demo" data-demo="vaporize">
+                <span>Trigger Sand Vaporizer</span>
+              </button>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="useless-card glass-panel">
+              <div class="useless-badge">CRON ANARCHY</div>
+              <h3 class="useless-title">Existential Crisis Cron Job</h3>
+              <p class="useless-desc">
+                A daemon running on a Raspberry Pi that sends high-priority Webhook alerts to Slack at 3:33 AM asking if the database indexes are happy with their purpose in the cosmos.
+              </p>
+              <div class="useless-tech">Python • Webhooks • Systemd • Shell</div>
+              <button class="btn btn-sm btn-ghost trigger-demo" data-demo="cron">
+                <span>Trigger 3:33 AM Ping</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Art Studio & Paintings -->
+        <div class="tab-content" id="tab-art">
+          <div class="art-studio-intro">
+            <p>Beyond distributed systems, I immerse myself in acrylics, canvas painting, and digital concept art. Here are recent pieces blending organic colors with sci-fi themes:</p>
+          </div>
+          <div class="art-gallery-grid">
+            <!-- Painting 1 -->
+            <div class="art-item glass-panel" data-art-title="Twilight Mirage at Dune 04" data-art-desc="Acrylic on textured canvas: Warm ochre dunes fading into deep violet starry expanse.">
+              <div class="art-canvas-preview art-bg-1">
+                <div class="art-overlay">
+                  <span class="art-tag">CANVAS PAINTING</span>
+                  <h4>Twilight Mirage at Dune 04</h4>
+                  <span class="art-zoom-btn">View Art Piece 🔍</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Painting 2 -->
+            <div class="art-item glass-panel" data-art-title="Cyber Falcon Telemetry" data-art-desc="Digital study: A desert raptor gliding through holographic grid lines over a neon sand oasis.">
+              <div class="art-canvas-preview art-bg-2">
+                <div class="art-overlay">
+                  <span class="art-tag">DIGITAL CONCEPT</span>
+                  <h4>Cyber Falcon Telemetry</h4>
+                  <span class="art-zoom-btn">View Art Piece 🔍</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Painting 3 -->
+            <div class="art-item glass-panel" data-art-title="Circuits in the Sand" data-art-desc="Mixed media: Embedded copper wires and gold leaf creating electronic traces across desert terrain.">
+              <div class="art-canvas-preview art-bg-3">
+                <div class="art-overlay">
+                  <span class="art-tag">MIXED MEDIA</span>
+                  <h4>Circuits in the Sand</h4>
+                  <span class="art-zoom-btn">View Art Piece 🔍</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Painting 4 -->
+            <div class="art-item glass-panel" data-art-title="The Fennec's Night Frequency" data-art-desc="Gouache on black paper: Highlighting ambient frequency spectrums emitted by desert wildlife.">
+              <div class="art-canvas-preview art-bg-4">
+                <div class="art-overlay">
+                  <span class="art-tag">GOUACHE STUDY</span>
+                  <h4>The Fennec's Night Frequency</h4>
+                  <span class="art-zoom-btn">View Art Piece 🔍</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Dune Runner Mini Arcade Game -->
+        <div class="tab-content" id="tab-arcade">
+          <div class="arcade-container glass-panel">
+            <div class="arcade-header">
+              <div class="arcade-title">
+                <span class="retro-badge">8-BIT OASIS</span>
+                <h3>Dune Runner: The Cyber Fennec's Sprint</h3>
+              </div>
+              <div class="arcade-scores">
+                <div class="score-box">SCORE: <span id="game-score">0</span></div>
+                <div class="score-box high">HIGH SCORE: <span id="game-high-score">0</span></div>
+              </div>
+            </div>
+
+            <div class="arcade-viewport">
+              <canvas id="game-canvas" width="800" height="300"></canvas>
+              <div id="game-start-overlay" class="game-overlay">
+                <div class="overlay-box">
+                  <h4>DUNE RUNNER ARCADE</h4>
+                  <p>Help the Cyber Fennec Fox jump over desert cacti, server racks, and bug logs!</p>
+                  <button id="start-game-btn" class="btn btn-primary">START RUN [ SPACE / TAP ]</button>
+                  <span class="key-hint">Press SPACEBAR or Tap on Mobile to Jump</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arcade-footer">
+              <span>CONTROLS: SPACEBAR / CLICK TO JUMP</span>
+              <span id="game-status-text">Ready to run through the dunes.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. INTERACTIVE DESERT TERMINAL & TRANSMISSION FOOTER -->
+    <section id="transmission" class="section terminal-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">// 05. TRANSMISSION STATION</span>
+          <h2 class="section-title">Field Transceiver & Terminal</h2>
+          <p class="section-desc">Broadcast a message across the desert oasis or execute terminal commands.</p>
+        </div>
+
+        <div class="terminal-wrapper glass-panel">
+          <!-- Terminal Window Header -->
+          <div class="term-window-bar">
+            <div class="term-window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="term-window-title">chaitrali@oasis-edge-node:~ (bash)</div>
+            <div class="term-window-actions">
+              <span class="status-indicator live">SSH: ESTABLISHED</span>
+            </div>
+          </div>
+
+          <!-- Interactive Terminal Body -->
+          <div class="term-window-body" id="interactive-terminal">
+            <div class="term-line output">Welcome to Chaitrali Shankar Jalgi's Desert Field Terminal [v2.4.0-oasis]</div>
+            <div class="term-line output">Type <span class="cmd-highlight">'help'</span> to view available operations or test commands below.</div>
+            <div class="term-line output dim">Try: <span class="cmd-pill">cat skills.json</span> <span class="cmd-pill">whoami</span> <span class="cmd-pill">ping chaitrali</span> <span class="cmd-pill">sudo hire</span> <span class="cmd-pill">clear</span></div>
+            
+            <div id="terminal-history"></div>
+
+            <form id="terminal-form" class="term-input-line" autocomplete="off">
+              <span class="term-prompt">chaitrali@oasis:~$</span>
+              <input type="text" id="terminal-input" class="term-input" autofocus spellcheck="false" placeholder="type a command..." />
+              <button type="submit" class="term-enter-btn">ENTER</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Direct Beacon Channels (Quick Contact) -->
+        <div class="contact-beacons-grid">
+          <a href="mailto:chaitralijalgi@gmail.com" class="beacon-card glass-panel" id="contact-email">
+            <div class="beacon-icon">✉</div>
+            <div class="beacon-content">
+              <span class="beacon-label">DIRECT TRANSMISSION</span>
+              <span class="beacon-value">chaitralijalgi@gmail.com</span>
+            </div>
+            <span class="beacon-arrow">→</span>
+          </a>
+
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="beacon-card glass-panel" id="contact-github">
+            <div class="beacon-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </div>
+            <div class="beacon-content">
+              <span class="beacon-label">CODE REPOSITORY</span>
+              <span class="beacon-value">github.com/chaitrali</span>
+            </div>
+            <span class="beacon-arrow">→</span>
+          </a>
+
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="beacon-card glass-panel" id="contact-linkedin">
+            <div class="beacon-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </div>
+            <div class="beacon-content">
+              <span class="beacon-label">PROFESSIONAL NETWORK</span>
+              <span class="beacon-value">LinkedIn Connection</span>
+            </div>
+            <span class="beacon-arrow">→</span>
+          </a>
+        </div>
+
+        <!-- Animated Horizon Silhouette in Footer -->
+        <div class="desert-horizon-footer" aria-hidden="true">
+          <svg class="horizon-svg" viewBox="0 0 1440 200" fill="none" preserveAspectRatio="none">
+            <!-- Setting Cyber Sun -->
+            <circle cx="720" cy="180" r="140" fill="url(#sun-gradient)" opacity="0.6"/>
+            <!-- Far Dunes -->
+            <path d="M0 120 Q360 80 720 130 T1440 100 L1440 200 L0 200 Z" fill="#1A132F" opacity="0.8"/>
+            <!-- Near Dunes -->
+            <path d="M0 150 Q400 110 800 160 T1440 140 L1440 200 L0 200 Z" fill="#0F0A1A"/>
+            <!-- Camel & Caravan Silhouette -->
+            <path d="M920 145 Q930 140 935 130 Q940 120 945 130 Q950 140 960 145 L962 155 L958 155 L954 147 L944 147 L940 155 L936 155 L930 147 L924 155 L920 155 Z" fill="#FF8C42" opacity="0.7"/>
+            <defs>
+              <linearGradient id="sun-gradient" x1="720" y1="40" x2="720" y2="200" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FF8C42"/>
+                <stop offset="0.7" stop-color="#D96B43" stop-opacity="0.4"/>
+                <stop offset="1" stop-color="#0F0A1A" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="copyright-bar">
+            <span>Designed & Engineered by <strong>Chaitrali Shankar Jalgi</strong> © 2026</span>
+            <span>• Cyber Desert Oasis Edition •</span>
+            <span>Zero-Bloat Vanilla Tech Stack</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Modal for Art Pieces & Demos -->
+  <div id="interactive-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-card glass-panel" role="dialog" aria-modal="true">
+      <button id="modal-close-btn" class="modal-close" aria-label="Close dialog">✕</button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Module -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
